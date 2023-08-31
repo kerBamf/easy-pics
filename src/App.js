@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import MainPage from './pages/mainPage';
+import Header from './components/header'
 
 function App() {
   return (
     <div className="App">
-      <h1>Here we heckin' go, kids...</h1>
+      <Header />
       <MainPage />
     </div>
   );
