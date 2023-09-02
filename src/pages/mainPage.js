@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container'
 import { useEffect, useState } from 'react'
 import { GetAllUsers } from '../utils/apiCalls.js'
 import Carousel from 'react-bootstrap/Carousel'
+import { Link } from 'react-router-dom'
 
 
 const MainPage = (props) => {
@@ -15,10 +16,10 @@ const MainPage = (props) => {
 
     const userCards = users.map((value, idx) => {
         return (
-            <Carousel.Item>
+            <Carousel.Item key={idx}>
                 <img src={value.piclink}></img>
                 <Carousel.Caption>
-                    <h5>{value.firstname} {value.lastname}</h5>
+                    <Link to={`/users/${value.id}`}> <h5>{value.firstname} {value.lastname}</h5></Link>
                     <p>{value.blurb}</p>
                 </Carousel.Caption>
             </Carousel.Item>
